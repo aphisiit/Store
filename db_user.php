@@ -1,8 +1,8 @@
 <?php
 $db_user='root';
 $db_pwd='1';
-$db_name='project';
-`mysql --user=$db_user --password=$db_pwd -e "CREATE DATABASE IF NOT EXISTS $db_name";
+$db_name='Store';
+`mysql --user=$db_user --password=$db_pwd -e "CREATE DATABASE IF NOT EXISTS $db_name"`;
 
 if(!isset($handle)){
 	$handle = mysql_connect("localhost",$db_user,$db_pwd,$db_name);	
@@ -30,11 +30,26 @@ if($pos === false){
 			lastName varchar(50),
 			born DATE,
 			age INT,
-			sex CHAR,
+			sex varchar(10),
 			nationalID varchar(14),
 			phone varchar(11),
-			email varchar(30) 
+			email varchar(30), 
+			class varchar(6)
 		)ENGINE=MyISAM DEFAULT CHARSET='utf8'";
 	mysqli_query($handle,$query);
+/*	
+$link = mysql_connect("localhost",$db_user,$db_pwd,$db_name);
+$result = mysql_query("SELECT * FROM user", $handle);
+$num_rows = mysql_num_rows($result);
+
+if($num_rows <= 0){
+	$query="insert user (username,password,firstName,lastName,born,age,sex
+		nationalID,phone,email) values ('admin','password','Aphisit','Namracha'
+		,'2008-7-04',22,'Male','1671000034511','0911450179'
+		,'aphisiit086757@hotmail'.com,'admin')";
+	mysqli_query($handle,$query);
 }
+	*/
+}
+
 ?>

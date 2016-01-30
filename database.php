@@ -2,7 +2,7 @@
 $db_user='root';
 $db_pwd='1';
 $db_name='project';
-`mysql --user=$db_user --password=$db_pwd -e "CREATE DATABASE IF NOT EXISTS $db_name";
+`mysql --user=$db_user --password=$db_pwd -e "CREATE DATABASE IF NOT EXISTS $db_name"`;
 
 if(!isset($handle)){
 	$handle = mysql_connect("localhost",$db_user,$db_pwd,$db_name);	
