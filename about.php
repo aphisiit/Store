@@ -58,9 +58,8 @@
 		
 		<ul>
 			<li><a href="main.php">All product</a></li>
-			<li><a href="add.php">Update store</a></li>
-			<li><a href="order.php">Release commodity</a></li>
-			<li><a href="order.php">Order product</a></li>
+			<li><a href="add.php">Add product</a></li>
+			<li><a href="release.php">Release commodity</a></li>			
 			<li><a href="search.php">Search and Delete Product</a></li>
 			<li><a class="active" href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">

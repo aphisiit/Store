@@ -113,9 +113,8 @@
 		
 		<ul>
 			<li><a href="main.php">All product</a></li>
-			<li><a class="active" href="add.php">Update store</a></li>
-			<li><a href="order.php">Release commodity</a></li>
-			<li><a href="order.php">Order product</a></li>
+			<li><a class="active" href="add.php">Add product</a></li>
+			<li><a href="release.php">Release commodity</a></li>			
 			<li><a href="search.php">Search and Delete Product</a></li>
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
@@ -146,6 +145,18 @@
 			<label>
 				Price per item
 				<input type="text" name="price">
+			</label>
+			<label>
+				Company
+				<input type="text" name="company">
+			</label>
+			<label>
+				Phone
+				<input type="text" name="phone">
+			</label>
+			<label>
+				Email
+				<input type="text" name="email">
 			</label>
 			</fieldset>
 			<label>
