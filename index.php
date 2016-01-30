@@ -1,36 +1,6 @@
-<?php  session_start(); ?> 
-
 <?php
 
-if(isset($_SESSION['use']))   // Checking whether the session is already there or not if 
-                              // true that header redirect it to the home page directly 
- {
-    header("Location:chat.php"); 
- }
-
-if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
-{
-     $user = $_POST['user'];
-     $pass = $_POST['pass'];
-
-      if($user == "a" && $pass == "1234")  // username is  set to "Ank"  and Password   
-         {                                   // is 1234 by default     
-
-          $_SESSION['use']=$user;
-
-
-         echo '<script type="text/javascript"> window.open("main.php","_self");</script>';            
-         //  On Successfull Login redirects to home.php
-
-        }
-
-        else
-        {
-			echo '<script language="javascript"> alert("Login fail !!!"); </script>';     
-			echo '<script type="text/javascript"> window.open("index.php","_self");</script>';      
-        }
-}
- ?>
+?>
 <head>
 	<style>
 		body {
@@ -99,7 +69,7 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 		}
 	</style>
 </head>
-<center><form action="" method="post">
+<center><form action="check_login.php" method="post">
   <fieldset class="account-info">
     <label>
       Username
@@ -117,34 +87,4 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
     </label>
   </fieldset>
 </form></center>
-<!--
-<html>
-<head>
 
-<title> Login Page   </title>
-
-</head>
-
-<body>
-<center>
-	<form action="" method="post">
-		<table width="200" border="0">
-		<tr>
-			<td>UserName</td>
-			<td><input type="text" name="user" > </td>
-		</tr>
-		<tr>
-			<td> PassWord  </td>
-			<td><input type="password" name="pass"></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td align="right"> <input type="submit" name="login" value="LOGIN"></td>
-		<td></td>
-		</tr>
-		</table>
-	</form>
-</center>
-</body>
-</html>
--->
