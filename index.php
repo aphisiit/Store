@@ -15,7 +15,7 @@
 		form {
 			border: 1px solid #c6c7cc;
 			border-radius: 5px;
-<!--			font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; -->
+<!--		font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; -->
 			overflow: hidden;
 			width: 300px;
 		}	

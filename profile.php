@@ -63,13 +63,53 @@
 			<li><a href="search.php">Search and Delete Productt</a></li>
 			<li><a href="about.php">About</a></li>			
 		<ul style="float:right;list-style-type:none;">
-			<li><a class="active href="profile.php">Profile</a></li>
+			<li><a class="active" href="profile.php">Manage User</a></li>
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>
 		
 		<center>Hello Username</center>
+
+
 		
+		<center><table style="width:80%">
+			<tr>
+				<th>No.</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>User Status</th>
+				<th>National ID</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+
+			<?php
+				$con = mysqli_connect("localhost","root","1","store");
+				if(!$con){
+					die("Connection failed: ".mysqli_connect_error());
+				}	
+				$sql = "SELECT * FROM user";
+				$result = mysqli_query($con,$sql);
+
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+						echo "<tr><td>".$row["rec_num"]."</td>";
+						echo "<td>".$row["username"]."</td>";
+						echo "<td>".$row["password"]."</td>";
+						echo "<td>".$row["firstname"]."</td>";
+						echo "<td>".$row["lastname"]."</td>";
+						echo "<td>".$row["status"]."</td>";
+						echo "<td>".$row["nationnalID"]."</td>";
+						echo "<td>".$row["phone"]."</td>";
+						echo "<td>".$row["email"]."</td></tr>";
+					}
+				}
+			?>
+
+		</table>
+		</center>
 		
 	</body>
 </html>

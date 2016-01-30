@@ -118,7 +118,7 @@
 			<li><a href="search.php">Search and Delete Productt</a></li>
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
-			<li><a href="profile.html">Profile</a></li>
+			<li><a href="profile.html">Manage User</a></li>
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>
