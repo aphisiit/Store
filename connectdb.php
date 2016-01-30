@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_row($result)) {
 
 $pos = strpos($all_db_table, "user ");
 if ($pos === false) {    
-     //create_table
+     //create_table user
 	$query="create table user (
 				rec_num      INT UNSIGNED NOT NULL AUTO_INCREMENT,
 				username     varchar(80) NOT NULL,
@@ -49,7 +49,7 @@ if ($pos === false) {
 }
 $pos = strpos($all_db_table, "product ");
 if ($pos === false) {    
-     //create_table
+     //create_table product
 	$query="create table product (
 				rec_num      INT UNSIGNED NOT NULL AUTO_INCREMENT,
 				productID  		varchar(10) NOT NULL,
@@ -57,6 +57,9 @@ if ($pos === false) {
 				brand	 		varchar(30) NOT NULL,
 				amount		 	INT NOT NULL,				
 				price       	FLOAT NOT NULL,
+				company			varchar(30) NOT NULL,
+				phone			varchar(15) NOT NULL,
+				email 			varchar(35) NOT NULL,
 				PRIMARY KEY (rec_num)
 				) ENGINE=MyISAM DEFAULT CHARSET='utf8' ";
 	mysqli_query($handle,$query);

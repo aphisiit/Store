@@ -6,6 +6,9 @@
 	$brand = $_POST['brand'];
 	$amount = $_POST['amount'];
 	$price = $_POST['price'];
+	$company = $_POST['company'];
+	$phone = $_POST['phone'];
+	$email = $_POST['email'];
 	
 	if($_POST['productID'] == '' || $_POST['productName'] == '' || $_POST['brand'] == '' || $_POST['amount'] == '' || $_POST['price'] == ''){
 		echo '<script language="javascript">alert("Please enter data to all field !!!");</script>';
@@ -21,8 +24,8 @@
 		}
 
 
-		$data = "INSERT INTO product(productID,productName,brand,amount,price)
-		VALUES('".$productID."','".$productName."','".$brand."','".$amount."','".$price."')";
+		$data = "INSERT INTO product(productID,productName,brand,amount,price,company,phone,email)
+		VALUES('".$productID."','".$productName."','".$brand."','".$amount."','".$price."','".$company."','".$phone."','".$email."')";
 
 		if(mysqli_query($con,$data)){
 				echo '<script language="javascript">alert("New data created sucessfully");</script>';				

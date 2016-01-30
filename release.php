@@ -57,9 +57,9 @@
 		<center><h1>Welcom to Store Management System</h1></center><br>
 		
 		<ul>
-			<li><a class="active" href="main.php">All product</a></li>
+			<li><a href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
-			<li><a href="release.php">Release commodity</a></li>			
+			<li><a class="active" href="release.php">Release commodity</a></li>	
 			<li><a href="search.php">Search and Delete Product</a></li>
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
@@ -68,7 +68,7 @@
 			</ul>
 		</ul><br>
 		
-		<center><table style="width:95%">
+		<center><table style="width:80%">
 			<caption>Table below is data about stock in store</caption>
 			<tr>
 				<th>No.</th>
@@ -76,10 +76,7 @@
 				<th>Product Name</th>
 				<th>Brand</th>
 				<th>Amount of Product</th>
-				<th>Price/item(THB)</th>
-				<th>Company</th>
-				<th>Phone</th>
-				<th>Email</th>
+				<th>Price per item (THB)</th>
 			</tr>
 			<?php
 				$con = mysqli_connect("localhost","root","1","store");
@@ -90,19 +87,14 @@
 				$result = mysqli_query($con,$data);
 
 				if(mysqli_num_rows($result) > 0){
-					while($row = mysqli_fetch_array($result)){
-						$id = $row['rec_num'];
+					while($row = mysqli_fetch_assoc($result)){
 						echo "<tr><td>".$row["rec_num"]."</td>";
-						echo "<form action=\"updateProduct.php?id=$id\" method=\"POST\">";
-						echo "<td><input name=\"productID\" type=\"text\" size=\"10\" value=\"".$row["productID"]."\"</td>";
-						echo "<td><input name=\"productName\" type=\"text\" size=\"15\" value=\"".$row["productName"]."\"></td>";
-						echo "<td><input name=\"brand\" type=\"text\" size=\"15\" value=\"".$row["brand"]."\"></td>";
-						echo "<td><input name=\"amount\" type=\"text\" size=\"10\" value=\"".$row["amount"]."\"></td>";
-						echo "<td><input name=\"price\" type=\"text\" size=\"10\" value=\"".$row["price"]."\"></td>";
-						echo "<td><input name=\"company\" type=\"text\" value=\"".$row["company"]."\"></td>";
-						echo "<td><input name=\"phone\" type=\"text\" size=\"10\" value=\"".$row["phone"]."\"></td>";
-						echo "<td><input name=\"email\" type=\"text\" value=\"".$row["email"]."\"></td>";
-						echo "<td><input name=\"submit\"type=\"submit\" value=\"Update\"></form></td></tr>";
+						echo "<td>".$row["productID"]."</td>";
+						echo "<td>".$row["productName"]."</td>";
+						echo "<td>".$row["brand"]."</td>";
+						echo "<td>".$row["amount"]."</td>";						
+						echo "<td>".$row["price"]."</td>";
+						echo "<td><button type=\"button\">Delete</button></td></tr>";
 					}
 				}
 			?>
