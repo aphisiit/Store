@@ -57,11 +57,12 @@
 		<center><h1>Welcom to Store Management System</h1></center><br>
 		
 		<ul>
-			<li><a href="main.php">Over View</a></li>
+			<li><a href="main.php">All product</a></li>
+			<li><a href="add.php">Update store</a></li>
+			<li><a href="order.php">Release commodity</a></li>
 			<li><a href="order.php">Order product</a></li>
-			<li><a href="add.php">Add product</a></li>
-			<li><a href="search.php">Search and Delete Productt</a></li>
-			<li><a href="about.php">About</a></li>			
+			<li><a href="search.php">Search and Delete Product</a></li>
+			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
 			<li><a class="active" href="profile.php">Manage User</a></li>
 			<li><a href="logout.php">Logout</a></li>
@@ -103,7 +104,8 @@
 						echo "<td>".$row["status"]."</td>";
 						echo "<td>".$row["nationnalID"]."</td>";
 						echo "<td>".$row["phone"]."</td>";
-						echo "<td>".$row["email"]."</td></tr>";
+						echo "<td>".$row["email"]."</td>";
+						echo "<td><button type=\"button\">Delete</button></td></tr>";
 					}
 				}
 			?>

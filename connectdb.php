@@ -47,4 +47,18 @@ if ($pos === false) {
 				) ENGINE=MyISAM DEFAULT CHARSET='utf8' ";
 	mysqli_query($handle,$query);
 }
+$pos = strpos($all_db_table, "product ");
+if ($pos === false) {    
+     //create_table
+	$query="create table product (
+				rec_num      INT UNSIGNED NOT NULL AUTO_INCREMENT,
+				productID  		varchar(10) NOT NULL,
+				productName     varchar(30) NOT NULL,
+				brand	 		varchar(30) NOT NULL,
+				amount		 	INT NOT NULL,				
+				price       	FLOAT NOT NULL,
+				PRIMARY KEY (rec_num)
+				) ENGINE=MyISAM DEFAULT CHARSET='utf8' ";
+	mysqli_query($handle,$query);
+}
 ?>

@@ -72,26 +72,33 @@
 		<center><table style="width:80%">
 			<caption>Table below is data about stock in store</caption>
 			<tr>
+				<th>No.</th>
 				<th>ProductID</th>
 				<th>Product Name</th>
 				<th>Brand</th>
 				<th>Amount of Product</th>
 				<th>Price per item (THB)</th>
 			</tr>
-			<tr>
-				<td>A1234</td>
-				<td>Fan</td>
-				<td>Hatari</td>
-				<td>123</td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td>A1234</td>
-				<td>Fan</td>
-				<td>Hitachi</td>
-				<td>123</td>
-				<td>1</td>
-			</tr>
+			<?php
+				$con = mysqli_connect("localhost","root","1","store");
+				if(!$con){
+					die("Connection failed: ".mysqli_connect_error());
+				}	
+				$data = "SELECT * FROM product";
+				$result = mysqli_query($con,$data);
+
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+						echo "<tr><td>".$row["rec_num"]."</td>";
+						echo "<td>".$row["productID"]."</td>";
+						echo "<td>".$row["productName"]."</td>";
+						echo "<td>".$row["brand"]."</td>";
+						echo "<td>".$row["amount"]."</td>";						
+						echo "<td>".$row["price"]."</td>";
+						echo "<td><button type=\"button\">Delete</button></td></tr>";
+					}
+				}
+			?>
 		</table>
 		</center>
 	</body>
