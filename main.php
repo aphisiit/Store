@@ -60,11 +60,11 @@
 			<li><a class="active" href="main.php">All product</a></li>
 			<li><a href="add.php">Update store</a></li>
 			<li><a href="order.php">Release commodity</a></li>
-			<li><a href="order.php">Order product</a></li>5		
+			<li><a href="order.php">Order product</a></li>
 			<li><a href="search.php">Search and Delete Product</a></li>
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
-			<li><a href="profile.html">Profile</a></li>
+			<li><a href="profile.php">Manage User</a></li>
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>

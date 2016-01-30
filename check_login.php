@@ -44,9 +44,9 @@
 //				echo '<script language="javascript">alert("This username already exists");</script>';
 //				echo '<script type="text/javascript"> window.open("index.php","_self");</script>';      				
 		}
-		$check_log = "SELECT * FROM user where username = '".$user."'' and password = '".$pass."'";
+		$check_log = "SELECT * FROM user where username = '".$user."' and password = '".$pass."'";
 		$temp = mysqli_query($con,$check_log);
-		$num = mysqli_fetch_array($temp,MYSQLI_ASSOC);
+		$num = mysqli_fetch_array($temp);
 		if(!$num){			
 			echo '<script language="javascript">alert("username or password may be wrong,please try again");</script>';
 			echo '<script type="text/javascript"> window.open("index.php","_self");</script>';      							
