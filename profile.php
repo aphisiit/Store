@@ -113,13 +113,19 @@
 	</script>
 	</head>
 	<body>
+
+		<center>
+		<?php			
+			echo "<h2>Hello : ".$_SESSION[ses_nameuser]."</h2>";			
+		?>
+		</center>
 		
 		<center><h1>Welcom to Store Management System</h1></center><br>
 		
 		<ul>
 			<li><a href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
-			<li><a href="release.php">Release commodity</a></li>			
+			<li><a href="release.php">Sell product</a></li>			
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">			
 			<?php
@@ -129,11 +135,7 @@
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>
-		
-		<center>Hello Username</center>
-
-
-		
+				
 		<center><table style="width:80%">
 			<tr>
 				<th>No.</th>
@@ -146,23 +148,23 @@
 				<th>Phone</th>
 				<th>Email</th>
 			</tr>
-			<center>Add user ?<br>
+			<center><h2>Add user</h2><br>
 				<form action="addUser.php" method="POST" id="addForm">									
-						username : 
+						Username : 
 						<input name="username" type="text" size="10">					
-						password : 
+						Password : 
 						<input name="password" type="text" size="10">									
-						firstname : 
+						Firstname : 
 						<input name="firstname" type="text" size="10">						
-						lastname : 
+						Lastname : 
 						<input name="lastname" type="text" size="10"><br><br>
-						status : 
+						Status : 
 						<input name="status" type="text" size="10">
-						nationnalID : 
+						NationnalID : 
 						<input name="nationnalID" type="text" size="14">
-						phone : 
+						Phone : 
 						<input name="phone" type="text" size="12">
-						email : 
+						Email : 
 						<input name="email" type="text" size="15"><br><br>					
 					<label>
 						<input class="canclebtn" type="button" value="Clear Form" onclick="resetAddForm()">
