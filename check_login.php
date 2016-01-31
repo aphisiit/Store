@@ -55,11 +55,15 @@
 			if($num['status'] == 'admin'){
 				echo '<script language="javascript">alert("Welcome admin");</script>';
 				echo '<script type="text/javascript"> window.open("main.php","_self");</script>'; 
+				$_SESSION[ses_username] = $num['username'];
+				$_SESSION[ses_password] = $num['password'];
 				$_SESSION[ses_status] = "admin";     								
 			}
 			else{
 				echo '<script language="javascript">alert("Welcome user");</script>';
 				echo '<script type="text/javascript"> window.open("main.php","_self");</script>';      	
+				$_SESSION[ses_username] = $num['username'];
+				$_SESSION[ses_password] = $num['password'];
 				$_SESSION[ses_status] = "user";							
 			}
 		}
