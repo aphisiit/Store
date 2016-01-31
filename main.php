@@ -1,4 +1,9 @@
-<?php ?>
+<?php 
+	session_start();
+
+	if(!isset($_SESSION[ses_username]))
+		echo '<script type="text/javascript"> window.open("index.php","_self");</script>';
+?>
 <html>
 	<title>Main</title>
 	<head>
@@ -50,6 +55,56 @@
 		tr:hover {?
 			background-color: #82FA58;
 		}
+		form {
+			border: 0px solid #c6c7cc;
+			border-radius: 5px;
+			overflow: hidden;
+			width: 300px;
+		}
+		fieldset {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		input {
+			border-radius: 5px;
+			font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+			margin: 0;
+		}
+		.addfield{
+			padding: 20px 20px 0 20px;
+		}
+		.addfield label{			
+			display: block;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.addfield input{
+			background: #fff; 
+			border: 1px solid #c6c7cc;
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+			color: #636466;
+			padding: 6px;
+			margin-top: 6px;
+			margin-bottom: 6px;
+			width: 100%;			
+		}
+		.canclebtn {
+			background: #FF0000;
+			border: 0;
+			color: #fff;
+			cursor: pointer;
+			font-weight: bold;
+			padding: 8px 16px;
+		}
+		.savebtn {
+			background: #4CAF50;
+			border: 0;
+			color: #fff;
+			cursor: pointer;
+			font-weight: bold;
+			padding: 8px 16px;
+		}
 	</style>
 	</head>
 	<body>
@@ -62,8 +117,7 @@
 			<li><a href="release.php">Release commodity</a></li>					
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
-			<?php
-				session_start(); 
+			<?php				
 				if($_SESSION[ses_status] == "admin")
 					echo "<li><a href=\"profile.php\">Manage User</a></li>";
 			?>
@@ -92,10 +146,11 @@
 				$data = "SELECT * FROM product";
 				$result = mysqli_query($con,$data);
 
+				$count = 1;
 				if(mysqli_num_rows($result) > 0){
 					while($row = mysqli_fetch_array($result)){
 						$id = $row['rec_num'];
-						echo "<tr><td>".$row["rec_num"]."</td>";
+						echo "<tr><td>".$count."</td>";
 						echo "<form action=\"updateProduct.php?id=$id\" method=\"POST\">";
 						echo "<td><input name=\"productID\" type=\"text\" size=\"10\" value=\"".$row["productID"]."\"</td>";
 						echo "<td><input name=\"productName\" type=\"text\" size=\"15\" value=\"".$row["productName"]."\"></td>";
@@ -105,8 +160,9 @@
 						echo "<td><input name=\"company\" type=\"text\" value=\"".$row["company"]."\"></td>";
 						echo "<td><input name=\"phone\" type=\"text\" size=\"10\" value=\"".$row["phone"]."\"></td>";
 						echo "<td><input name=\"email\" type=\"text\" value=\"".$row["email"]."\"></td>";
-						echo "<td><input name=\"submit\"type=\"submit\" value=\"Update\"></td></form>";
-						echo "<td><a href=\"deleteProduct.php?id=$id\"><input name=\"delete\" type=\"button\" value=\"Delete\"></a></td></tr>";
+						echo "<td><input name=\"submit\" class=\"savebtn\" type=\"submit\" value=\"Update\"></td></form>";
+						echo "<td><a href=\"deleteProduct.php?id=$id\"><input name=\"delete\" class=\"canclebtn\" type=\"button\" value=\"Delete\"></a></td></tr>";
+						$count++;
 					}
 				}
 			?>

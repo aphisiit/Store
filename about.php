@@ -1,4 +1,9 @@
-<?php ?>
+<?php 
+	session_start();
+
+	if(!isset($_SESSION[ses_username]))
+		echo '<script type="text/javascript"> window.open("index.php","_self");</script>';
+?>
 <html>
 	<title>About</title>
 	<head>
@@ -63,7 +68,6 @@
 			<li><a class="active" href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
 			<?php
-				session_start(); 
 				if($_SESSION[ses_status] == "admin")
 					echo "<li><a href=\"profile.php\">Manage User</a></li>";
 			?>

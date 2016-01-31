@@ -30,7 +30,7 @@
 
 		if(mysqli_query($con,$data)){
 				echo '<script language="javascript">alert("New data created sucessfully");</script>';				
-				echo '<script type="text/javascript"> window.open("addUser.php","_self");</script>';      				
+				echo '<script type="text/javascript"> window.open("profile.php","_self");</script>';      				
 		}
 		else{
 			echo "Error:".$sql."<br>".mysqli_error($con);

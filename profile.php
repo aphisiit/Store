@@ -1,6 +1,11 @@
-<?php ?>
+<?php 
+	session_start();
+
+	if(!isset($_SESSION[ses_username]))
+		echo '<script type="text/javascript"> window.open("index.php","_self");</script>';
+?>
 <html>
-	<title>Search</title>
+	<title>Manage User</title>
 	<head>
 	<style>
 		body {
@@ -118,7 +123,6 @@
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">			
 			<?php
-				session_start(); 
 				if($_SESSION[ses_status] == "admin")
 					echo "<li><a class=\"active\" href=\"profile.php\">Manage User</a></li>";
 			?>
@@ -174,10 +178,11 @@
 				$sql = "SELECT * FROM user";
 				$result = mysqli_query($con,$sql);
 
+				$count = 1;
 				if(mysqli_num_rows($result) > 0){
 					while($row = mysqli_fetch_assoc($result)){
 						$id = $row['rec_num'];
-						echo "<tr><td>".$row["rec_num"]."</td>";
+						echo "<tr><td>".$count."</td>";
 						echo "<form action=\"updateUser.php?id=$id\" method=\"POST\">";
 						echo "<td><input name=\"username\" type=\"text\" size=\"10\" value=\"".$row["username"]."\"</td>";
 						echo "<td><input name=\"password\" type=\"text\" size=\"10\" value=\"".$row["password"]."\"</td>";
@@ -188,7 +193,8 @@
 						echo "<td><input name=\"phone\" type=\"text\" size=\"12\" value=\"".$row["phone"]."\"</td>";
 						echo "<td><input name=\"email\" type=\"text\" size=\"30\" value=\"".$row["email"]."\"</td>";
 						echo "<td><input name=\"submit\" class=\"savebtn\" type=\"submit\" value=\"Update\"></td></form>";
-						echo "<td><a href=\"deleteUser.php?id=$id\"><input name=\"delete\" type=\"button\" value=\"Delete\"></a></td></tr>";
+						echo "<td><a href=\"deleteUser.php?id=$id\"><input name=\"delete\" class=\"canclebtn\" type=\"button\" value=\"Delete\"></a></td></tr>";
+						$count++;
 					}
 				}
 			?>
