@@ -55,16 +55,5 @@
 			echo '<script language="javascript">alert("Welcome $user");</script>';
 			echo '<script type="text/javascript"> window.open("main.php","_self");</script>';      								
 		}
-//			$admin = "INSERT INTO user(username,password,firstname,lastname,status,nationnalID,phone,email)
-//			VALUES('admin', 'password','Aphisit','Namracha','admin','1671074536277','0911450179','aphisiit086757@hotmail.com')";
-//
-//			if(mysqli_query($con,$admin)){
-//				echo '<script language="javascript">alert("New record created sucessfully");</script>';				
-//			}
-//			else{
-//				echo "Error:".$sql."<br>".mysqli_error($con);
-//			}
-//		}			
-//		mysqli_close($con);
 	}
 ?>
