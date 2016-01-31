@@ -51,11 +51,6 @@
 			background-color: #82FA58;
 		}
 	</style>
-	<script>
-		function msg() {
-    		<?php echo '<scritp language="javascript">alert("Hello world!");</script>'; ?>
-		}
-	</script>
 	</head>
 	<body>
 		
@@ -64,11 +59,14 @@
 		<ul>
 			<li><a class="active" href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
-			<li><a href="release.php">Release commodity</a></li>			
-			<li><a href="search.php">Search and Delete Product</a></li>
+			<li><a href="release.php">Release commodity</a></li>					
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
-			<li><a href="profile.php">Manage User</a></li>
+			<?php
+				session_start(); 
+				if($_SESSION[ses_status] == "admin")
+					echo "<li><a href=\"profile.php\">Manage User</a></li>";
+			?>
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>
@@ -108,7 +106,7 @@
 						echo "<td><input name=\"phone\" type=\"text\" size=\"10\" value=\"".$row["phone"]."\"></td>";
 						echo "<td><input name=\"email\" type=\"text\" value=\"".$row["email"]."\"></td>";
 						echo "<td><input name=\"submit\"type=\"submit\" value=\"Update\"></td></form>";
-						echo "<td><a href=\"deleteProduct.php?id=$id\"><input name=\"delete\"type=\"button\" value=\"Delete\" onclick=\"delete\"></a></td></tr>";
+						echo "<td><a href=\"deleteProduct.php?id=$id\"><input name=\"delete\" type=\"button\" value=\"Delete\"></a></td></tr>";
 					}
 				}
 			?>
