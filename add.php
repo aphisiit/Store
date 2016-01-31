@@ -113,13 +113,18 @@
 	</script>
 	</head>
 	<body>
+		<center>
+		<?php			
+			echo "<h2>Hello : ".$_SESSION[ses_nameuser]."</h2>";			
+		?>
+		</center>
 		
 		<center><h1>Welcom to Store Management System</h1></center><br>
 		
 		<ul>
 			<li><a href="main.php">All product</a></li>
 			<li><a class="active" href="add.php">Add product</a></li>
-			<li><a href="release.php">Release commodity</a></li>						
+			<li><a href="release.php">Sell product</a></li>						
 			<li><a href="about.php">About</a></li>		
 		<ul style="float:right;list-style-type:none;">
 			<?php
