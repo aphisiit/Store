@@ -47,10 +47,15 @@
 		tr:nth-child(even) {
 			background-color: #f2f2f2;
 		}
-		tr:hover {
+		tr:hover {?
 			background-color: #82FA58;
 		}
 	</style>
+	<script>
+		function msg() {
+    		<?php echo '<scritp language="javascript">alert("Hello world!");</script>'; ?>
+		}
+	</script>
 	</head>
 	<body>
 		
@@ -102,7 +107,8 @@
 						echo "<td><input name=\"company\" type=\"text\" value=\"".$row["company"]."\"></td>";
 						echo "<td><input name=\"phone\" type=\"text\" size=\"10\" value=\"".$row["phone"]."\"></td>";
 						echo "<td><input name=\"email\" type=\"text\" value=\"".$row["email"]."\"></td>";
-						echo "<td><input name=\"submit\"type=\"submit\" value=\"Update\"></form></td></tr>";
+						echo "<td><input name=\"submit\"type=\"submit\" value=\"Update\"></td></form>";
+						echo "<td><a href=\"deleteProduct.php?id=$id\"><input name=\"delete\"type=\"button\" value=\"Delete\" onclick=\"delete\"></a></td></tr>";
 					}
 				}
 			?>
