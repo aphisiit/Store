@@ -119,8 +119,7 @@
 		<ul>
 			<li><a class="active" href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
-			<li><a href="release.php">Sell product</a></li>					
-			<li><a href="about.php">About</a></li>		
+			<li><a href="release.php">Sell product</a></li>								
 		<ul style="float:right;list-style-type:none;">
 			<?php				
 				if($_SESSION[ses_status] == "admin")

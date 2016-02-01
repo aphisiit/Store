@@ -88,3 +88,15 @@
   </fieldset>
 </form></center>
 
+<br><br><br><br><br><br><br><br><br><br><br>
+<center><h3>523456 Open Source Development at Suranaree University of Technology<br>Project : Store Management</h3></center>
+<center>
+<table>		
+	<tr><td>B5601745</td><td>Krissanawat Unruean</td></tr>
+	<tr><td>B5604937</td><td>Aphisit Namracha</td></tr>
+	<tr><td>B5607020</td><td>Adisak Dangbut</td></tr>
+	<tr><td>B5621781</td><td>Witchkorn Kitwanitkhachon</td></tr>
+</table>
+</center>
+
+

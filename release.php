@@ -115,13 +115,12 @@
 		<ul>
 			<li><a href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
-			<li><a class="active" href="release.php">Sell product</a></li>				
-			<li><a href="about.php">About</a></li>		
+			<li><a class="active" href="release.php">Sell product</a></li>							
 		<ul style="float:right;list-style-type:none;">
 			<?php
 				if($_SESSION[ses_status] == "admin")
 					echo "<li><a href=\"profile.php\">Manage User</a></li>";
-			?>
+			?>	
 			<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</ul><br>
@@ -138,8 +137,7 @@
 		<?php
 			if($_SESSION[ses_sell] == "selled"){
 				echo "<center><table style=\"width:80%\">";				
-					echo "<tr>";
-						echo "<th>No.</th>";
+					echo "<tr>";						
 						echo "<th>ProductID</th>";
 						echo "<th>Product Name</th>";
 						echo "<th>Brand</th>";
@@ -154,9 +152,8 @@
 						$result = mysqli_query($con,$data);
 
 						if(mysqli_num_rows($result) > 0){
-							while($row = mysqli_fetch_assoc($result)){
-								echo "<tr><td>".$row["rec_num"]."</td>";
-								echo "<td>".$row["productID"]."</td>";
+							while($row = mysqli_fetch_assoc($result)){								
+								echo "<tr><td>".$row["productID"]."</td>";
 								echo "<td>".$row["productName"]."</td>";
 								echo "<td>".$row["brand"]."</td>";
 								echo "<td>".$row["amount"]."</td>";						
@@ -185,14 +182,16 @@
 						$data = "SELECT * FROM product";
 						$result = mysqli_query($con,$data);
 
+						$count = 1;
 						if(mysqli_num_rows($result) > 0){
 							while($row = mysqli_fetch_assoc($result)){
-								echo "<tr><td>".$row["rec_num"]."</td>";
+								echo "<tr><td>".$count."</td>";
 								echo "<td>".$row["productID"]."</td>";
 								echo "<td>".$row["productName"]."</td>";
 								echo "<td>".$row["brand"]."</td>";
 								echo "<td>".$row["amount"]."</td>";						
 								echo "<td>".$row["price"]."</td></tr>";
+								$count++;
 							}
 						}				
 					echo "</table>";
