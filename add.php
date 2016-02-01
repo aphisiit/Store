@@ -115,7 +115,7 @@
 	<body>
 		<center>
 		<?php			
-			echo "<h2>Hello : ".$_SESSION[ses_nameuser]."</h2>";			
+			echo "<h2>Hello : ".$_SESSION[ses_username]."</h2>";			
 		?>
 		</center>
 		

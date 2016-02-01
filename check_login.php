@@ -53,18 +53,18 @@
 		}
 		else{
 			if($num['status'] == 'admin'){
-				echo '<script language="javascript">alert("Welcome admin");</script>';
+				$temp = $num['firstname']." ".$num['lastname'];
+				echo "<script language=\"javascript\">alert('Hello Administrator : $temp');</script>";
 				echo '<script type="text/javascript"> window.open("main.php","_self");</script>'; 
 				$_SESSION[ses_username] = $num['username'];
-				$_SESSION[ses_nameuser] = $num['firstname'];
 				$_SESSION[ses_password] = $num['password'];
 				$_SESSION[ses_status] = "admin";     								
 			}
 			else{
-				echo '<script language="javascript">alert("Welcome user");</script>';
+				$temp = $num['firstname']." ".$num['lastname'];
+				echo "<script language=\"javascript\">alert('Welcome User : $temp');</script>";
 				echo '<script type="text/javascript"> window.open("main.php","_self");</script>';      	
 				$_SESSION[ses_username] = $num['username'];
-				$_SESSION[ses_nameuser] = $num['firstname'];
 				$_SESSION[ses_password] = $num['password'];
 				$_SESSION[ses_status] = "user";							
 			}
