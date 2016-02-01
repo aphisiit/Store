@@ -105,17 +105,17 @@
 			font-weight: bold;
 			padding: 8px 16px;
 		}
-	</style>
+	</style>	
 	</head>
-	<body>
-		
-		<center>
+	<body onLoad="javascript:sndReq();">		
+
+
+		<center><h1>Wayne Enterprise Inc.</h1></center>
+		<div align="right">
 		<?php			
-			echo "<h2>Hello : ".$_SESSION[ses_username]."</h2>";			
+			echo "<h2>user : ".$_SESSION[ses_username]."</h2>";			
 		?>
-		</center>
-		<center><h1>Welcom to Store Management System</h1></center><br>
-		
+		</div>
 		<ul>
 			<li><a class="active" href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
@@ -130,7 +130,6 @@
 		</ul><br>
 		
 		<center><table style="width:95%">
-			<caption>Table below is data about stock in store</caption>
 			<tr>
 				<th>No.</th>
 				<th>ProductID</th>
@@ -138,7 +137,7 @@
 				<th>Brand</th>
 				<th>Amount of Product</th>
 				<th>Price/item(THB)</th>
-				<th>Company</th>
+					<th>Company</th>
 				<th>Phone</th>
 				<th>Email</th>
 			</tr>

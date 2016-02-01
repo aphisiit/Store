@@ -103,15 +103,12 @@
 	</script>
 	</head>
 	<body>
-
-		<center>
+		<center><h1>Wayne Enterprise Inc.</h1></center>
+		<div align="right">
 		<?php			
-			echo "<h2>Hello : ".$_SESSION[ses_username]."</h2>";			
+			echo "<h2>user : ".$_SESSION[ses_username]."</h2>";			
 		?>
-		</center>
-		
-		<center><h1>Welcom to Store Management System</h1></center><br>
-		
+		</div>
 		<ul>
 			<li><a href="main.php">All product</a></li>
 			<li><a href="add.php">Add product</a></li>
