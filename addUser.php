@@ -26,7 +26,7 @@
 
 
 		$data = "INSERT INTO user(username,password,firstname,lastname,status,nationnalID,phone,email)
-		VALUES('".$username."','".$password."','".$firstname."','".$lastname."','".$status."','".$nationnalID."','".$phone."','".$email."')";
+		VALUES('".$username."','".MD5($password)."','".$firstname."','".$lastname."','".$status."','".$nationnalID."','".$phone."','".$email."')";
 
 		if(mysqli_query($con,$data)){
 				echo '<script language="javascript">alert("New data created sucessfully");</script>';				

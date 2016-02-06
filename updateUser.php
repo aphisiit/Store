@@ -27,7 +27,8 @@
 		if(!$con){
 			die("Connection failed: ".mysqli_connect_error());
 		}
-
+		
+		$password = MD5($password);
 		$data = "UPDATE user SET username='$username',password='$password',firstname='$firstname',lastname='$lastname',
 			status='$status',nationnalID='$nationnalID',phone='$phone',email='$email' WHERE rec_num='".$id."'";
 
